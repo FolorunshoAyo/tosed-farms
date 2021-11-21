@@ -1,0 +1,19 @@
+{
+  "name": "tosedfarms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass -w sass/main.scss css/style.css",
+    "update-sprite": "svg-sprite -s --symbol-dest icons --symbol-sprite icons.svg icons/individual-icons/*.svg"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  },
+  "dependencies": {
+    "svg-sprite": "^1.5.3"
+  }
+}

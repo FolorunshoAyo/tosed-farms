@@ -1,0 +1,26 @@
+.row{
+    display: flex;
+
+    [class ^="col-"]{
+
+        &:not(:last-child){
+            margin-right: 4rem;
+        }
+    }
+
+    .col-1-of-2, .col-2-of-4{
+        flex: 0 0 50%;
+    }
+
+    .col-1-of-3{
+        flex: 0 0 33.33%
+    }
+
+    .col-1-of-4{
+        flex: 0 0 25%;
+    }
+
+    .col-2-of-3{
+        flex: 0 0 75%
+    }
+}

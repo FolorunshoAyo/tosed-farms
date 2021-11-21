@@ -1,0 +1,162 @@
+.header{
+    height: 85vh;
+    background-color: $color-primary-light;
+
+    &__container{
+        background-color: $color-white;
+        border-top: 10px solid $color-primary;
+        height: 30%;
+    }
+
+    &__banner{
+        padding: 1rem 2.5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__main{
+        padding: 4rem 4rem;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+
+        display: flex;
+        justify-content: space-between;
+
+        &__nav1{
+            display: flex;
+            align-items: center;
+
+            ul{
+                list-style-type: none;
+
+                display: flex;
+                align-items: center;
+
+                li{
+                    font-size: 1.5rem;
+                    text-transform: uppercase;
+
+                    &:not(:last-child){
+                        margin-right: 2rem;
+                    }
+
+                    a{
+                        text-decoration: none;
+                        color: $color-black;
+                    }
+                }
+            }
+        }
+
+        &__nav2{
+            display: flex;
+            align-items: center;
+            
+            ul{
+                list-style-type: none;
+
+                display: flex;
+                align-items: center;
+
+                li{
+                    font-size: 1.5rem;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+
+                    &:not(:last-child){
+                        margin-right: 2rem;
+                    }
+
+                    a{
+                        text-decoration: none;
+                        color: $color-black;
+                    }
+                }
+            }
+        }
+    }
+
+    &__text-box{
+        display: flex;
+        flex-flow: row-reverse nowrap;
+        height: 70%;
+        
+        &-1{
+            flex: 0 0 50%;
+            align-self: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        &__btn{
+            margin-top: 10px;
+            padding: 1.2rem 2.5rem;
+            color: $color-white;
+            border-radius: 15px;
+            background-color: $color-primary-dark;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.contact-information{
+
+    &-1{
+        display: flex;
+        align-items: center;
+
+        & .mobile-info{
+            display: flex;
+            align-items: center;
+            margin-right: 1.5rem;
+        }
+
+        & .email-info{
+            display: flex;
+            align-items: center;
+        }
+
+        img{
+            margin-right: 0.5rem;
+        }
+    }
+
+    &-2{
+        display: flex;
+        align-items: center;
+
+        & .location-info{
+            display: flex;
+            align-items: center;
+            margin-right: 1.5rem;
+
+            img{
+                margin-right: 0.5rem;
+            }
+        }
+
+        & .social-media-info{
+            display: flex;
+            align-items: center;
+            ul{
+                display: flex;
+                align-items: center;
+                list-style-type: none;
+                line-height: 0;
+
+                li{
+
+                    &:not(:last-child){
+                        margin-right: 0.5rem;
+                    }
+                }
+            }
+
+        }
+    }
+}
