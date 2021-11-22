@@ -1,11 +1,10 @@
 .header{
-    height: 85vh;
+    height: 90vh;
     background-color: $color-primary-light;
 
     &__container{
         background-color: $color-white;
         border-top: 10px solid $color-primary;
-        height: 30%;
     }
 
     &__banner{
@@ -18,13 +17,23 @@
     }
 
     &__main{
-        padding: 4rem 4rem;
+        padding: 0 4rem;
         font-size: 1rem;
         font-weight: 700;
         letter-spacing: 0.5px;
+        height: 120px;
 
         display: flex;
         justify-content: space-between;
+
+        &__logo{
+            width: 15%;
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
 
         &__nav1{
             display: flex;
@@ -39,14 +48,32 @@
                 li{
                     font-size: 1.5rem;
                     text-transform: uppercase;
+                    position: relative;
+                    transition: all .5s;
+
+                    &:hover a::after{
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: block;
+                        width: 100%;
+                        height: 100%;  
+                        border-bottom: 2px solid $color-primary-light;
+                        animation: spread .5s linear;
+                    }
 
                     &:not(:last-child){
                         margin-right: 2rem;
                     }
 
                     a{
-                        text-decoration: none;
-                        color: $color-black;
+                        &:link, &:visited{
+                            text-decoration: none;
+                            color: $color-black;
+                            display: block;
+                        }
+
                     }
                 }
             }
@@ -66,14 +93,31 @@
                     font-size: 1.5rem;
                     text-transform: uppercase;
                     letter-spacing: 1px;
+                    position: relative;
+                    transition: all .5s;
+
+                    &:hover a::after{
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: block;
+                        width: 100%;
+                        height: 100%;  
+                        border-bottom: 2px solid $color-primary-light;
+                        animation: spread .5s linear;
+                    }
 
                     &:not(:last-child){
                         margin-right: 2rem;
                     }
 
                     a{
-                        text-decoration: none;
-                        color: $color-black;
+                        &:link, &:visited{
+                            text-decoration: none;
+                            color: $color-black;
+                            display: block;
+                        }
                     }
                 }
             }
@@ -159,4 +203,17 @@
 
         }
     }
+}
+
+
+.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba($color-white, 1);
+    box-shadow: 0 0.5rem 1.5rem rgba($color-black, .5);
+    animation: drop .5s;
+    z-index: 300;
 }
