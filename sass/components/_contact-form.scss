@@ -26,12 +26,29 @@
 
             &:focus{
                 outline: none;
+                border: 1px solid $color-primary-light;
+            }
+        }
+
+        input{
+            font: inherit;
+
+            &:not(:last-child){
+                text-transform: capitalize; 
+            }
+
+            &:focus + label{
+                outline: none;
+                transform: translateY(0px);
+                animation: fadeOut .25s linear;
             }
         }
 
         label{
-            font-size: 1.5rem;
-            margin-left: 1rem;
+            font-size: 16px;
+            display: block;
+            margin-left: 9px;
+            transform: translateY(-40px);
         }
 
         textarea{
@@ -43,6 +60,12 @@
             &:focus{
                 outline: none;
             }
+        }
+
+        label.still{
+            outline: none;
+            transform: translateY(0px);
+            // animation: fadeOut .25s linear; 
         }
 
         &:not(:last-child){

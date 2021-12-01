@@ -19,6 +19,20 @@
     transform: translateY(0);
     opacity: 1; } }
 
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px); }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-20px); }
+  80% {
+    opacity: 0.8;
+    transform: translateY(-10px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0px); } }
+
 *,
 *::after,
 *::before {
@@ -85,11 +99,23 @@ body {
   font-size: 16px;
   min-height: 50px; }
   .form-group input:focus, .form-group textarea:focus {
-    outline: none; }
+    outline: none;
+    border: 1px solid #55c57a; }
+
+.form-group input {
+  font: inherit; }
+  .form-group input:not(:last-child) {
+    text-transform: capitalize; }
+  .form-group input:focus + label {
+    outline: none;
+    transform: translateY(0px);
+    animation: fadeOut .25s linear; }
 
 .form-group label {
-  font-size: 1.5rem;
-  margin-left: 1rem; }
+  font-size: 16px;
+  display: block;
+  margin-left: 9px;
+  transform: translateY(-40px); }
 
 .form-group textarea {
   width: 100%;
@@ -98,6 +124,10 @@ body {
   padding: 13px 8px 5px; }
   .form-group textarea:focus {
     outline: none; }
+
+.form-group label.still {
+  outline: none;
+  transform: translateY(0px); }
 
 .form-group:not(:last-child) {
   margin-bottom: 2rem; }
@@ -254,17 +284,23 @@ body {
     justify-content: space-between; }
   .header__main {
     padding: 0 4rem;
-    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     height: 120px;
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    align-items: center; }
     .header__main__logo {
-      width: 15%; }
-      .header__main__logo img {
-        width: 100%;
-        height: 100%; }
+      text-align: center; }
+      .header__main__logo .brand-name {
+        color: #fff;
+        background-color: #2eb485;
+        font-size: 2rem;
+        height: 100%;
+        border-radius: 10px;
+        padding: 1.2rem;
+        letter-spacing: 2px;
+        text-transform: uppercase; }
     .header__main__nav1 {
       display: flex;
       align-items: center; }
@@ -381,7 +417,7 @@ body {
   width: 100%;
   background-color: white;
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
-  animation: drop .5s;
+  animation: drop .5s ease-out;
   z-index: 300; }
 
 .section__services-provided {

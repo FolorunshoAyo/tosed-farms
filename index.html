@@ -80,13 +80,13 @@
           <nav class="header__main__nav1">
             <ul>
               <li><a href="#">Home</a></li>
-              <li><a href="#">Poultry feeds</a></li>
+              <li><a href="#">Poultry Feeds</a></li>
               <li><a href="#">We deal in</a></li>
               <li><a href="#">Products</a></li>
             </ul>
           </nav>
           <div class="header__main__logo">
-            <img src="media/logo-2.png" alt="Tosed logo" />
+            <div class="brand-name">Tosed</div>
           </div>
           <nav class="header__main__nav2">
             <ul>
@@ -117,7 +117,7 @@
       <section class="section__services-provided">
         <div class="row">
           <div class="col-1-of-2 u-text-centered">
-            <h2 class="heading--primary">Poultry and Fish feeds</h2>
+            <h2 class="heading--primary">Poultry feeds</h2>
             <p class="paragraph">
               Poultry feed is food for farm poultry, including chickens, ducks,
               geese and other domestic birds. We produce one of the best quality
@@ -437,15 +437,15 @@
           <div class="form-row">
             <div class="form-col-1">
               <div class="form-group">
-                <input type="text" placeholder="Full Name" id="fullName">
+                <input type="text" id="fullName">
                 <label for="fullName">Full Name</label>
               </div>
               <div class="form-group">
-                <input type="text" placeholder="Mobile Number" id="mobile-no">
+                <input type="text" id="mobile-no">
                 <label for="mobile-no">Mobile Number</label>
               </div>
               <div class="form-group">
-                <input type="email" placeholder="Email" id="email">
+                <input type="email" id="email">
                 <label for="email">Email</label>
               </div>
             </div>
@@ -508,26 +508,26 @@
     <script>
       $(function(){
         $(".slick").slick({
-          lazyLoad: 'ondemand',
+          speed: 300,
           slidesToShow: 4,
           slidesToScroll: 1,
           responsive: [
             {
-              breakpoint: 1100,
+              breakpoint: 1024,
               settings: {
                 slidesToShow: 3,
-                slidesToScroll: 1
+                slidesToScroll: 3
               }
             },
             {
-              breakpoint: 900,
+              breakpoint: 600,
               settings: {
                 slidesToShow: 2,
-                slidesToScroll: 0
+                slidesToScroll: 2
               }
             },
             {
-              breakpoint: 400,
+              breakpoint: 480,
               settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1

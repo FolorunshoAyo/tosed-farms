@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "live-server",
     "compile:sass": "node-sass -w sass/main.scss css/style.css",
     "update-sprite": "svg-sprite -s --symbol-dest icons --symbol-sprite icons.svg icons/individual-icons/*.svg"
   },

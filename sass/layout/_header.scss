@@ -18,20 +18,26 @@
 
     &__main{
         padding: 0 4rem;
-        font-size: 1rem;
         font-weight: 700;
         letter-spacing: 0.5px;
         height: 120px;
 
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         &__logo{
-            width: 15%;
+            text-align: center;
 
-            img{
-                width: 100%;
+            & .brand-name{
+                color: $color-white;
+                background-color: $color-primary-dark;
+                font-size: 2rem;
                 height: 100%;
+                border-radius: 10px;
+                padding: 1.2rem;
+                letter-spacing: 2px;
+                text-transform: uppercase;
             }
         }
 
@@ -214,6 +220,6 @@
     width: 100%;
     background-color: rgba($color-white, 1);
     box-shadow: 0 0.5rem 1.5rem rgba($color-black, .5);
-    animation: drop .5s;
+    animation: drop .5s ease-out;
     z-index: 300;
 }
