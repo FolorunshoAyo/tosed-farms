@@ -1,10 +1,41 @@
 .row{
     display: flex;
 
+    &:not(:last-child){
+        margin-bottom: 2rem;
+    }
+
     [class ^="col-"]{
 
         &:not(:last-child){
-            margin-right: 4rem;
+            margin-right: 2rem;
+        }
+    }
+
+    &.services-provided{
+        @include respond(tab-port){
+            flex-direction: column;
+        }
+
+        .col-1-of-2{
+            &:not(:last-child){
+                margin-right: 2rem;
+
+                @include respond(tab-port){
+                    margin-right: 0;
+                    margin-bottom: 3rem;
+                }
+            }
+
+            &:last-child{
+                @include respond(tab-port){
+                    flex: 0 0 250px;
+                }
+
+                @include respond(b-500){
+                    flex: 0 0 220px;
+                }
+            }
         }
     }
 
@@ -12,8 +43,85 @@
         flex: 0 0 50%;
     }
 
+    .col-1-of-2{
+
+        .pictures-container.u-position-relative{
+            @include respond(med-desktop){
+                text-align: center;
+            }
+
+            @include respond(tab-land){
+                width: 410px;
+                margin: auto;
+            }
+
+            @include respond(tab-port){
+                width: 430px;
+            }
+
+            @include respond(med-phone){
+                width: 380px;
+            }
+
+            @include respond(b-500){
+                width: 320px;
+            }
+
+            @include respond(small-phone){
+                width: 100%;
+            }
+    
+            img{
+                width: 200px;
+                height: 200px;
+                border-radius: 10px;
+    
+                @include respond(med-desktop){
+                    position: static;
+                }
+    
+                @include respond(tab-land){
+                    position: absolute;
+                }
+
+                @include respond(med-phone){
+                    width: 180px;
+                    height: 180px;
+                }
+
+                @include respond(b-500){
+                    width: 150px;
+                    height: 150px;
+                }
+
+                @include respond(small-phone){
+                    max-width: 50%;
+                    height: 180px;
+                }
+        
+                &[alt = "animal 1"]{
+                    top: 0px;
+                    left: 0px; 
+                }
+    
+                &[alt = "animal 2"]{
+                    top: 80px;
+                    left: 30%;
+                    z-index: 3; 
+                }
+    
+                &[alt = "animal 3"]{
+                    top: 0px;
+                    right: -5px; 
+                }
+            }
+        }
+    }
+
     .col-1-of-3{
-        flex: 0 0 33.33%
+        flex: 0 0 32%
+
+
     }
 
     .col-1-of-4{
@@ -22,5 +130,32 @@
 
     .col-2-of-3{
         flex: 0 0 75%
+    }
+}
+
+.d-flex{
+    display: flex;
+
+    &.justify-content-space-between.flex-wrap{
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    [class ^= "product-"]{
+        flex: 0 0 24%;
+        margin-bottom: 20px;
+
+        @include respond(tab-port){
+            flex: 0 0 32%;
+        }
+
+        @include respond(b-610){
+            flex: 0 0 48%;
+        }
+
+        @include respond(small-phone){
+            flex: 0 0 100%;
+            margin-bottom: 10px;
+        }
     }
 }

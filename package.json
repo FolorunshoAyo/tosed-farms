@@ -12,9 +12,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^6.0.1"
+    "live-server": "^1.2.2",
+    "node-sass": "^7.0.1"
   },
   "dependencies": {
-    "svg-sprite": "^1.5.3"
+    "svg-sprite": "^1.5.4"
   }
 }

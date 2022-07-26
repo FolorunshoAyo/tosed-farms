@@ -1,10 +1,64 @@
 .header{
-    height: 90vh;
+    height: 100vh;
     background-color: $color-primary-light;
 
     &__container{
+        height: 20%;
         background-color: $color-white;
-        border-top: 10px solid $color-primary;
+        border-top: 5px solid $color-primary;
+
+        @include respond(med-phone){
+            height: 25%;
+        }
+
+        .mobile-nav{
+            display: none;
+            position: absolute;
+            overflow: hidden;
+            bottom: -310px;
+            right: 0px;
+            left: 0px;
+            width: 100%;
+            height: 0;
+            z-index: 10;
+            transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+
+            @include respond(small-phone){
+                bottom: -240px;
+            }
+
+            &.active{
+                display: block;
+                height: auto;
+                animation: drop .4s linear;
+            }
+
+            ul{
+                list-style-type: none;
+                background-color: $color-white;
+                
+                li{
+                    border-bottom: 2px solid $color-primary-light;
+
+                    a{
+                        &:link, &:visited{
+                            font-size: 1.5rem;
+                            text-decoration: none;
+                            color: $color-black;
+                            display: block;
+                            padding: 1rem 2rem;
+                            cursor: pointer;
+                            transition: all .3s ease-in;
+                        }
+
+                        &:hover{
+                            background-color: $color-primary-light;
+                            color: $color-white;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     &__banner{
@@ -14,17 +68,117 @@
 
         display: flex;
         justify-content: space-between;
+
+        @include respond(b-750){
+            padding: 1rem;
+            font-size: 1.2rem;
+        }
+
+        @include respond(med-phone){
+            flex-direction: column;
+        }
+
+        @include respond(small-phone){
+            font-size: 1.5rem;
+        }
+
+        i{
+            padding: 0px;
+            margin-bottom: 0px;
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+
+            @include respond(b-750){
+                font-size: 1.2rem;
+            }
+        }
+
+        & .contact-information-1{
+            @include respond(med-phone){
+                margin-bottom: 10px;
+            }
+        }
+
+
+        & .contact-information-2 .social-media-info{
+            a{
+                &:link, &:visited{
+                    color: $color-black;
+                    transition: all .3s ease-in;
+                }
+
+                &:hover{
+                    color: $color-primary-light;
+                }
+            }
+
+
+        }
     }
 
     &__main{
         padding: 0 4rem;
         font-weight: 700;
         letter-spacing: 0.5px;
-        height: 120px;
-
+        height: 90px;
+        position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @include respond(b-750){
+            padding: 1.5rem;
+        }
+
+        @include respond(med-phone){
+            height: 100px;
+            padding: 1.5rem 6rem;
+            border-top: 1px solid #ccc;
+        }
+
+        .burger-menu{
+            display: none;
+            width: 30px;
+            cursor: pointer;
+
+            @include respond(med-phone){
+                display: block;
+            }
+
+            [class ^= "line"]{
+                position: absolute;
+                width: 30px;
+                height: 4px;
+                background-color: $color-black; 
+                border-radius: 2px;
+                transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+            }
+
+            .line-1{
+                margin-top: -8px;
+            }
+
+            .line-3{
+                margin-top: 8px;
+            }
+
+            &.active{
+
+                .line-1{
+                    margin-top: 0px;
+                    transform: rotate(405deg);
+                }
+
+                .line-2{
+                    display: none;
+                }
+
+                .line-3{
+                    margin-top: 0px;
+                    transform: rotate(-405deg);
+                }
+            }
+        }
 
         &__logo{
             text-align: center;
@@ -35,15 +189,29 @@
                 font-size: 2rem;
                 height: 100%;
                 border-radius: 10px;
-                padding: 1.2rem;
-                letter-spacing: 2px;
+                padding: 1rem;
+                letter-spacing: 1.5px;
                 text-transform: uppercase;
+
+                @include respond(b-750){
+                    font-size: 1.5rem;
+                }
+
+                @include respond(med-phone){
+                    font-size: 2rem;
+                    letter-spacing: 2.5px;
+                    padding: 1rem 2.5rem;
+                }
             }
         }
 
         &__nav1{
             display: flex;
             align-items: center;
+
+            @include respond(med-phone){
+                display: none;
+            }
 
             ul{
                 list-style-type: none;
@@ -52,10 +220,15 @@
                 align-items: center;
 
                 li{
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                     text-transform: uppercase;
                     position: relative;
                     transition: all .5s;
+
+                    @include respond(b-750){
+                        font-size: 1rem;
+                    }
+
 
                     &:hover a::after{
                         content: "";
@@ -70,7 +243,11 @@
                     }
 
                     &:not(:last-child){
-                        margin-right: 2rem;
+                        margin-right: 2.5rem;
+
+                        @include respond(b-610){
+                            margin-right: 1.5rem;
+                        }
                     }
 
                     a{
@@ -89,6 +266,10 @@
             display: flex;
             align-items: center;
             
+            @include respond(med-phone){
+                display: none;
+            }
+
             ul{
                 list-style-type: none;
 
@@ -96,11 +277,15 @@
                 align-items: center;
 
                 li{
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                     text-transform: uppercase;
                     letter-spacing: 1px;
                     position: relative;
                     transition: all .5s;
+
+                    @include respond(b-750){
+                        font-size: 1rem;
+                    }
 
                     &:hover a::after{
                         content: "";
@@ -115,7 +300,11 @@
                     }
 
                     &:not(:last-child){
-                        margin-right: 2rem;
+                        margin-right: 2.5rem;
+
+                        @include respond(b-610){
+                            margin-right: 1.5rem;
+                        }
                     }
 
                     a{
@@ -130,16 +319,47 @@
         }
     }
 
+    &__slide{
+        height: 80%;
+        display: none;
+
+        @include respond(small-phone){
+            height: 75%;
+        }
+
+        &.first{
+            display: block;
+        }
+
+        &.fade{
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+    }
+
     &__text-box{
+        position: relative;
         display: flex;
+        background: $color-white url("../../media/chickenfeed.jpeg") no-repeat center center;
+        background-size: cover;
         flex-flow: row-reverse nowrap;
-        height: 70%;
-        
+        height: 100%;
+
+        @include respond(med-phone){
+            flex-flow: initial;
+            justify-content: center;
+        }
+
         &-1{
-            flex: 0 0 50%;
+            flex: 0 0 65%;
             align-self: center;
             padding: 2rem;
             text-align: center;
+            z-index: 5;
+
+            @include respond(med-phone){
+                flex: 0 0 80%;
+            }
         }
 
         &__btn{
@@ -152,6 +372,15 @@
             cursor: pointer;
         }
     }
+
+    &__background-shadow{
+        position: absolute;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        background-color: rgba(0,0,0,.7);
+    }
 }
 
 .contact-information{
@@ -160,15 +389,31 @@
         display: flex;
         align-items: center;
 
+        @include respond(small-phone){
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 1.5rem;
+        }
+
         & .mobile-info{
             display: flex;
             align-items: center;
             margin-right: 1.5rem;
+
+            @include respond(small-phone){
+                margin-right: 0;
+                margin-bottom: 5px;
+                font-size: 1.5rem;
+            }
         }
 
         & .email-info{
             display: flex;
             align-items: center;
+
+            @include respond(small-phone){
+                font-size: 1.5rem;
+            }
         }
 
         img{
@@ -180,10 +425,19 @@
         display: flex;
         align-items: center;
 
+        @include respond(small-phone){
+            justify-content: space-between;
+        }
+
         & .location-info{
             display: flex;
             align-items: center;
             margin-right: 1.5rem;
+
+            @include respond(small-phone){
+                margin-right: 0;
+                font-size: 1.5rem;
+            }
 
             img{
                 margin-right: 0.5rem;
@@ -193,6 +447,7 @@
         & .social-media-info{
             display: flex;
             align-items: center;
+
             ul{
                 display: flex;
                 align-items: center;
@@ -200,9 +455,17 @@
                 line-height: 0;
 
                 li{
-
                     &:not(:last-child){
                         margin-right: 0.5rem;
+                    }
+
+                    a{
+
+                        i{
+                            @include respond(small-phone){
+                                font-size: 2rem;
+                            }
+                        }
                     }
                 }
             }
@@ -219,6 +482,7 @@
     right: 0;
     width: 100%;
     background-color: rgba($color-white, 1);
+    border-bottom: 4px solid $color-primary-light;
     box-shadow: 0 0.5rem 1.5rem rgba($color-black, .5);
     animation: drop .5s ease-out;
     z-index: 300;
