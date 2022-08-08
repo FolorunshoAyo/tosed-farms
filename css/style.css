@@ -87,7 +87,8 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
-  color: #000; }
+  color: #000;
+  animation: fade .5s; }
 
 .heading--main {
   font-size: 3rem;
@@ -141,6 +142,7 @@ body {
   width: 100%;
   display: block;
   font-size: 16px;
+  font-family: inherit;
   min-height: 50px; }
   .form-group input:focus, .form-group textarea:focus {
     outline: none;
@@ -150,6 +152,8 @@ body {
   font-size: 1.5rem; }
   .form-group input:not(:last-child) {
     text-transform: capitalize; }
+  .form-group input[type="email"] {
+    text-transform: initial; }
   .form-group input:focus + label {
     outline: none;
     transform: translateY(0px);
@@ -163,12 +167,17 @@ body {
   padding: 5px 8px;
   margin-left: 9px;
   transform: translateY(-40px); }
+  @media only screen and (max-width: 25em) {
+    .form-group label {
+      transform: translateY(-38px); } }
 
 .form-group textarea {
   width: 100%;
   min-height: 190px;
   resize: none;
-  padding: 13px 8px 5px; }
+  padding: 13px 8px 5px;
+  line-height: 1.5;
+  font-size: 1.5rem; }
   .form-group textarea:focus {
     outline: none; }
 
@@ -324,6 +333,10 @@ body {
       flex: 0 0 40px;
       height: 40px;
       overflow: hidden; }
+      @media only screen and (max-width: 25em) {
+        .footer .social-links li {
+          flex: 0 0 30px;
+          height: 30px; } }
       .footer .social-links li:not(:last-child) {
         margin-right: 10px; }
       .footer .social-links li a:link, .footer .social-links li a:visited {
@@ -340,6 +353,9 @@ body {
       .footer .social-links li a:hover {
         background-color: #55c57a;
         color: #fff; }
+      @media only screen and (max-width: 25em) {
+        .footer .social-links li a i {
+          font-size: 1.8rem; } }
   .footer__copyright {
     display: flex;
     justify-content: space-between;
@@ -450,15 +466,17 @@ body {
         margin-bottom: 10px; } }
 
 .header {
-  height: 100vh;
   background-color: #55c57a; }
   .header__container {
-    height: 20%;
+    height: 140px;
     background-color: #fff;
     border-top: 5px solid #17A828; }
+    @media only screen and (max-width: 46.875em) {
+      .header__container {
+        height: 120px; } }
     @media only screen and (max-width: 37.5em) {
       .header__container {
-        height: 25%; } }
+        height: 180px; } }
     .header__container .mobile-nav {
       display: none;
       position: absolute;
@@ -663,7 +681,6 @@ body {
             color: #000;
             display: block; }
   .header__slide {
-    height: 80%;
     display: none; }
     @media only screen and (max-width: 25em) {
       .header__slide {
@@ -679,7 +696,7 @@ body {
     background: #fff url("../../media/chickenfeed.jpeg") no-repeat center center;
     background-size: cover;
     flex-flow: row-reverse nowrap;
-    height: 100%; }
+    height: 600px; }
     @media only screen and (max-width: 37.5em) {
       .header__text-box {
         flex-flow: initial;
@@ -726,12 +743,24 @@ body {
         margin-right: 0;
         margin-bottom: 5px;
         font-size: 1.5rem; } }
+    .contact-information-1 .mobile-info a:link, .contact-information-1 .mobile-info a:visited {
+      text-decoration: none;
+      color: #000;
+      transition: all .3s; }
+    .contact-information-1 .mobile-info a:hover {
+      color: #55c57a; }
   .contact-information-1 .email-info {
     display: flex;
     align-items: center; }
     @media only screen and (max-width: 25em) {
       .contact-information-1 .email-info {
         font-size: 1.5rem; } }
+    .contact-information-1 .email-info a:link, .contact-information-1 .email-info a:visited {
+      text-decoration: none;
+      color: #000;
+      transition: all .3s; }
+    .contact-information-1 .email-info a:hover {
+      color: #55c57a; }
   .contact-information-1 img {
     margin-right: 0.5rem; }
 
@@ -800,7 +829,10 @@ body {
     overflow-x: scroll;
     overflow-y: hidden;
     width: 100%;
-    height: 350px; }
+    height: 500px; }
+    @media only screen and (max-width: 37.5em) {
+      .section__gallery-photos {
+        height: 400px; } }
     .section__gallery-photos::-webkit-scrollbar {
       height: 10px;
       cursor: pointer; }
@@ -882,3 +914,10 @@ body {
     @media only screen and (max-width: 38.125em) {
       .section__form #contact-form {
         width: 90%; } }
+    @media only screen and (max-width: 31.25em) {
+      .section__form #contact-form {
+        width: 100%;
+        margin: 0px; } }
+  @media only screen and (max-width: 25em) {
+    .section__form {
+      padding: 6rem 5rem; } }

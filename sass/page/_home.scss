@@ -30,7 +30,11 @@
             overflow-x: scroll;
             overflow-y: hidden;
             width: 100%;
-            height: 350px;
+            height: 500px;
+
+            @include respond(med-phone){
+                height: 400px;
+            }
 
             @include customScrollbar;
 
@@ -133,6 +137,15 @@
             @include respond(b-610){
                 width: 90%;
             }
+
+            @include respond(b-500){
+                width: 100%;
+                margin: 0px;
+            }
+        }
+
+        @include respond(small-phone){
+            padding: 6rem 5rem;
         }
 
     }

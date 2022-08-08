@@ -15,23 +15,29 @@ $(function(){
     let slideIndex = 1;
 
     const smoothScroll = (link, location, duration) => {
-        $(link).on("click", function (e) {
-            e.preventDefault();
-            $([document.documentElement, document.body]).animate({
-                scrollTop: $(location).offset().top
-            }, duration);
+        $(link).each(function(){
+            $(this).on("click", (e) => {
+                e.preventDefault();
+                if($(this).parent().parent().parent().hasClass("mobile-nav")){
+                    burgerMenu.removeClass("active");
+                    $(".mobile-nav").removeClass("active");
+                }
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $(location).offset().top
+                }, duration);
+            });
         });
     };
 
     function enableSmoothScroll(){
-        smoothScroll("#home-link", "#home", 2500); 
-        smoothScroll("#poultry-field-link", "#poultry-field", 2500); 
-        smoothScroll("#services-link", "#services", 2500);
-        smoothScroll("#products-link", "#featured-products", 2500);
-        smoothScroll("#aboutus-link", "#about-us", 2500);
-        smoothScroll("#gallery-link", "#gallery", 2500);
-        smoothScroll("#contact-link", "#contact", 2500);
-        smoothScroll("#enquiry-link", "#enquiry", 2500);
+        smoothScroll(".home-link", "#home", 2500); 
+        smoothScroll(".poultry-field-link", "#poultry-field", 2500); 
+        smoothScroll(".services-link", "#services", 2500);
+        smoothScroll(".products-link", "#featured-products", 2500);
+        smoothScroll(".aboutus-link", "#about-us", 2500);
+        smoothScroll(".gallery-link", "#gallery", 2500);
+        smoothScroll(".contact-link", "#contact", 2500);
+        smoothScroll(".enquiry-link", "#enquiry", 2500);
         // scrollFunctionMobile(".home-mobile", "#top", 2500);
         // scrollFunctionMobile(".about-mobile", "#about", 2500);
         // scrollFunctionMobile(".contact-mobile", "#contact", 2500);

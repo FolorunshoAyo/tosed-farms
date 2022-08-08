@@ -95,6 +95,11 @@
             height: 40px;
             overflow: hidden;
 
+            @include respond(small-phone){
+                flex: 0 0 30px;
+                height: 30px;
+            }
+
             &:not(:last-child){
                 margin-right: 10px;
             }
@@ -116,6 +121,12 @@
                 &:hover{
                     background-color: $color-primary-light;
                     color: $color-white;
+                }
+
+                i{
+                    @include respond(small-phone){
+                        font-size: 1.8rem;
+                    }
                 }
             }
         }

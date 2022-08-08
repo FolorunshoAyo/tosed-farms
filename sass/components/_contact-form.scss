@@ -30,6 +30,7 @@
             width: 100%;
             display: block;
             font-size: 16px;
+            font-family: inherit;
             min-height: 50px;
 
             &:focus{
@@ -43,6 +44,10 @@
 
             &:not(:last-child){
                 text-transform: capitalize; 
+            }
+
+            &[type="email"]{
+                text-transform: initial;
             }
 
             &:focus + label{
@@ -60,6 +65,10 @@
             padding: 5px 8px;
             margin-left: 9px;
             transform: translateY(-40px);
+
+            @include respond(small-phone){
+                transform: translateY(-38px);
+            }
         }
 
         textarea{
@@ -67,6 +76,8 @@
             min-height: 190px;
             resize: none;
             padding: 13px 8px 5px;
+            line-height: 1.5;
+            font-size: 1.5rem;
 
             &:focus{
                 outline: none;
