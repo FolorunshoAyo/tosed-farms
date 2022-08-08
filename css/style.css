@@ -479,6 +479,9 @@ body {
         height: 120px; } }
     @media only screen and (max-width: 37.5em) {
       .header__container {
+        height: 170px; } }
+    @media only screen and (max-width: 25em) {
+      .header__container {
         height: 180px; } }
     .header__container .mobile-nav {
       display: none;
@@ -696,7 +699,7 @@ body {
   .header__text-box {
     position: relative;
     display: flex;
-    background: #fff url("../../media/chickenfeed.jpeg") no-repeat center center;
+    background: #fff url("../media/chickenfeed.jpeg") no-repeat center center;
     background-size: cover;
     flex-flow: row-reverse nowrap;
     height: 600px; }
