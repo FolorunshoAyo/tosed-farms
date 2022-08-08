@@ -7,6 +7,10 @@
         border-top: 5px solid $color-primary;
 
 
+        @include repoond(big-desktop){
+            height: 180px;
+        }
+
         @include respond(b-750){
             height: 120px;
         }

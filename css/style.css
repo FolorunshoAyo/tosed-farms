@@ -693,7 +693,7 @@ body {
   .header__text-box {
     position: relative;
     display: flex;
-    background: #fff url("../../media/chickenfeed.jpeg") no-repeat center center;
+    background: #fff url("/media/chickenfeed.jpeg") no-repeat center center;
     background-size: cover;
     flex-flow: row-reverse nowrap;
     height: 600px; }

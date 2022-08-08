@@ -5,7 +5,25 @@ $(function(){
     const slides = $(".header__slide");
     const burgerMenu = $(".burger-menu");
     const mobileNav = $(".mobile-nav");
+    const contactForm = $("#contact-form");
 
+
+    // Test Handler for contact form submit
+    contactForm.on("submit", function (e) {
+        e.preventDefault();
+
+        const formData = $(this).serializeArray();
+
+        let collatedInfo = "Collected data is\n";
+
+        for(let formInputDetail of formData){
+            collatedInfo += `${formInputDetail["name"]}: ${formInputDetail["value"]}\n`;
+        }
+
+        alert(collatedInfo);
+    });
+
+    // Event Handler for Burger Menu Toggle
     burgerMenu.on("click", () => {
         burgerMenu.toggleClass("active");
         mobileNav.toggleClass("active");
@@ -14,6 +32,7 @@ $(function(){
 
     let slideIndex = 1;
 
+    // Smooth scroll function declaration for handling smooth document fragmenting.
     const smoothScroll = (link, location, duration) => {
         $(link).each(function(){
             $(this).on("click", (e) => {
@@ -29,6 +48,7 @@ $(function(){
         });
     };
 
+    // Function to enable smooth scroll functionality on all anchor elements.
     function enableSmoothScroll(){
         smoothScroll(".home-link", "#home", 2500); 
         smoothScroll(".poultry-field-link", "#poultry-field", 2500); 
@@ -54,12 +74,14 @@ $(function(){
         });
     });
 
+    // Jquery handler for displaying sticky header upon scroll.
     $window.on("scroll", () => {
         let headerMain = $(".header__main");
 
         headerMain[0].classList.toggle("sticky", $window[0].scrollY > 180);
     });
 
+    // Slider animation for the hero section.
     setInterval(() => {
         let i;
         if (slideIndex > slides.length) {slideIndex = 1}
